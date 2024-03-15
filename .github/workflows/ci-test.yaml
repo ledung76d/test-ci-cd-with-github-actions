@@ -1,0 +1,15 @@
+name: Test CI
+on: 
+  push:
+    branches:
+      - kha-test-ci
+jobs: 
+    npm-run-test: 
+        runs-on: ubuntu-latest
+        steps: 
+            - name: '1. Checkout'
+              uses: actions/checkout@v2
+            - name: '2. Install'
+              run: npm install
+            - name: '3. Test'
+              run: npm test
